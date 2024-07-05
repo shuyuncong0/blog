@@ -3,13 +3,13 @@ import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-	author: "Chris Williams",
+	author: "shuyuncong",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
 		locale: "en-GB",
 		options: {
 			day: "numeric",
-			month: "short",
+			month: "numeric",
 			year: "numeric",
 		},
 	},
@@ -22,10 +22,10 @@ export const siteConfig: SiteConfig = {
 	// Option to sort posts by updatedDate if set to true (if property exists). Default (false) will sort by publishDate
 	sortPostsByUpdatedDate: false,
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-	title: "Astro Theme Cactus",
+	title: "云端的杂货铺",
 	webmentions: {
 		// Webmention.io API endpoint. Get your own here: https://webmention.io/, and follow this blog post: https://astro-cactus.chriswilliams.dev/posts/webmentions/
-		link: "https://webmention.io/astro-cactus.chriswilliams.dev/webmention",
+		link: "https://blog.illsky.com/",
 	},
 };
 
@@ -33,16 +33,21 @@ export const siteConfig: SiteConfig = {
 export const menuLinks: { path: string; title: string }[] = [
 	{
 		path: "/",
-		title: "Home",
-	},
-	{
-		path: "/about/",
-		title: "About",
+		title: "首页",
 	},
 	{
 		path: "/posts/",
-		title: "Blog",
+		title: "博客",
 	},
+	{
+		path: "/tags/",
+		title: "标签",
+	},
+	{
+		path: "/about/",
+		title: "关于",
+	},
+	
 ];
 
 // https://expressive-code.com/reference/configuration/
