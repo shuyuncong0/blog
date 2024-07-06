@@ -16,9 +16,9 @@ export const siteConfig: SiteConfig = {
 	// Meta property used as the default description meta property
 	description: "An opinionated starter theme for Astro",
 	// HTML lang property, found in src/layouts/Base.astro L:18
-	lang: "en-GB",
+	lang: "cn-GB",
 	// Meta property, found in src/components/BaseHead.astro L:42
-	ogLocale: "en_GB",
+	ogLocale: "cn_GB",
 	// Option to sort posts by updatedDate if set to true (if property exists). Default (false) will sort by publishDate
 	sortPostsByUpdatedDate: false,
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
