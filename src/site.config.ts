@@ -6,11 +6,11 @@ export const siteConfig: SiteConfig = {
 	author: "shuyuncong",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
-		locale: "en-GB",
+		locale: "cn-GB",
 		options: {
-			day: "numeric",
-			month: "numeric",
 			year: "numeric",
+			month: "2-digit",
+			day: "2-digit",
 		},
 	},
 	// Meta property used as the default description meta property
