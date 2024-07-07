@@ -93,7 +93,7 @@ const descYearKeys = Object.keys(groupedByYear).sort((a, b) => +b - +a);
 							<li>
 								<a
 									aria-label={`View all posts with the tag: ${tag}`}
-									class="flex items-center justify-center rounded-lg bg-accent p-1"
+									class="flex items-center justify-center rounded-lg  p-1"
 									href={`/tags/${tag}/`}
 								>
 									{tag}
@@ -112,9 +112,8 @@ const descYearKeys = Object.keys(groupedByYear).sort((a, b) => +b - +a);
 	</div>
 </PageLayout>
 <style>
-	.bg-accent {
-		--tw-bg-opacity: 1;
-		background-color: hsl(var(--theme-bg-1) / var(--tw-bg-opacity));
+	.text-bgColor {
+    	color: hsl(var(--theme-bg-1) / 1);
 	}
  
 </style>
