@@ -6,7 +6,7 @@ export const siteConfig: SiteConfig = {
 	author: "shuyuncong",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
-		locale: "cn-GB",
+		locale: "zh-cn",
 		options: {
 			year: "numeric",
 			month: "2-digit",
@@ -16,9 +16,9 @@ export const siteConfig: SiteConfig = {
 	// Meta property used as the default description meta property
 	description: "An opinionated starter theme for Astro",
 	// HTML lang property, found in src/layouts/Base.astro L:18
-	lang: "cn-GB",
+	lang: "zh-cn",
 	// Meta property, found in src/components/BaseHead.astro L:42
-	ogLocale: "cn_GB",
+	ogLocale: "zh-cn",
 	// Option to sort posts by updatedDate if set to true (if property exists). Default (false) will sort by publishDate
 	sortPostsByUpdatedDate: false,
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
