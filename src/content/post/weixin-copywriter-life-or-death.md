@@ -6,6 +6,7 @@ coverImage:
   src: "./img/weixin-life-or-death.jpg"
   alt: "遗憾"
 tags: ["公众号", "文案"]
+draft: true
 ---
 
 
