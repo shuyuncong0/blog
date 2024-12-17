@@ -5,6 +5,7 @@ import { defineConfig } from "astro/config";
 import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
 import fs from "fs";
+import vercel from '@astrojs/vercel';
 import rehypeExternalLinks from "rehype-external-links";
 import remarkUnwrapImages from "remark-unwrap-images";
 
@@ -13,6 +14,10 @@ import { remarkReadingTime } from "./src/utils/remark-reading-time";
 
 // https://astro.build/config
 export default defineConfig({
+	output: "server",
+  	adapter: vercel({
+		
+	  }),
 	image: {
 		domains: ["webmention.io"],
 	},
