@@ -24,7 +24,7 @@ tags: ["工作", "Redis", "缓存一致性"]
 
 比如我现在在京东抢投影仪，大部分时候都是用户在查询商品信息，是典型的**读多写少**的场景，可以利用缓存。
 
-```
+```java
 //根据id查询商品信息  
 public GoodsVO loadGoodsInfoById(Long id) {
   //从redis中拿用户信息
@@ -41,7 +41,7 @@ public GoodsVO loadGoodsInfoById(Long id) {
 
 ```
 
-```
+```java
 //编辑商品信息
 public void modifyGoodsById(GoodsVO goodsVO) {
     // 删除缓存
@@ -68,7 +68,7 @@ public void modifyGoodsById(GoodsVO goodsVO) {
 
 当我们查询商品信息时，首先尝试从缓存中读取数据。如果缓存中没有数据（缓存穿透），则加锁后从数据库中查询并更新缓存。
 
-```
+```java
 // 根据商品ID查询商品信息
 public GoodsVO loadGoodsInfoById(Long id) {
   // 从缓存中获取数据
@@ -109,7 +109,7 @@ public GoodsVO loadGoodsFromDb(Long id) {
 
 当我们修改商品信息时，需要先获取分布式锁，保证没有其他线程在同时读取或修改这条数据。更新数据库后，及时更新缓存中的数据。
 
-```
+```java
 // 编辑商品信息
 public void modifyGoodsById(GoodsVO goodsVO) throws Exception {
     // 获取分布式锁
