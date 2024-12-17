@@ -1,8 +1,8 @@
 import type { APIRoute } from "astro";
 import { Redis } from '@upstash/redis'
 const isDev = import.meta.env.DEV;
-const KV_REST_API_URL = (_str: string) => Buffer.from("aHR0cHM6Ly9vcmdhbmljLXJhdHRsZXItMzMwMDQudXBzdGFzaC5pbw==", 'base64').toString('utf-8');
-const KV_REST_API_TOKEN = (_str: string) => Buffer.from("QVlEc0FBSWpjREUyTkdJek1HUmpZMlJqWmprME1XUmtPVFUxTURrM01EVXpOR1F4TlRJNE1uQXhNQQ==", 'base64').toString('utf-8');
+const KV_REST_API_URL =  Buffer.from("aHR0cHM6Ly9vcmdhbmljLXJhdHRsZXItMzMwMDQudXBzdGFzaC5pbw==", 'base64').toString('utf-8');
+const KV_REST_API_TOKEN = Buffer.from("QVlEc0FBSWpjREUyTkdJek1HUmpZMlJqWmprME1XUmtPVFUxTURrM01EVXpOR1F4TlRJNE1uQXhNQQ==", 'base64').toString('utf-8');
 
 export const prerender = false;
 export const GET: APIRoute = async ctx => {
