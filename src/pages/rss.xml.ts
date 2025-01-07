@@ -1,11 +1,12 @@
 import rss from "@astrojs/rss";
 import { siteConfig } from "@/site-config";
-import { getAllPosts } from "@/data/post";
+import { getAllPosts, sortMDByDate} from "@/data/post";
 
 export const GET = async () => {
-	const posts = await getAllPosts();
+	const allPosts = await getAllPosts();
+	const posts = sortMDByDate(allPosts);
 
-	return rss({
+	const resp = rss({
 		title: siteConfig.title,
 		description: siteConfig.description,
 		site: import.meta.env.SITE,
@@ -15,5 +16,15 @@ export const GET = async () => {
 			pubDate: post.data.publishDate,
 			link: `posts/${post.slug}`,
 		})),
+		// 👇 Please specify the directory for the XSL stylesheet file
+		stylesheet: "/rss.xsl",
 	});
+
+	return new Response((await resp).body, {
+		headers: {
+		  // 👇 Modify the Content-Type of the HTTP Response
+		  "Content-Type": "application/xml",
+		  "x-content-type-options": "nosniff",
+		},
+	  });
 };
