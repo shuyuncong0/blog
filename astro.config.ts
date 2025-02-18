@@ -1,7 +1,6 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import vercel from '@astrojs/vercel';
 import { defineConfig } from "astro/config";
 import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
@@ -15,13 +14,10 @@ import { remarkReadingTime } from "./src/utils/remark-reading-time";
 // https://astro.build/config
 export default defineConfig({
 
-  adapter: vercel({
-		
-	  }),
 	image: {
 		domains: ["webmention.io"],
 	},
-  	integrations: [
+  integrations: [
 		expressiveCode(expressiveCodeOptions),
 		icon(),
 		tailwind({
@@ -47,8 +43,6 @@ export default defineConfig({
 			},
 		},
 	},
-	output: "server",
-
 	// https://docs.astro.build/en/guides/prefetch/
 	prefetch: true,
 	// ! Please remember to replace the following site property with your own domain
