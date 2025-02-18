@@ -1,11 +1,11 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+import vercel from '@astrojs/vercel';
 import { defineConfig } from "astro/config";
 import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
 import fs from "fs";
-import vercel from '@astrojs/vercel';
 import rehypeExternalLinks from "rehype-external-links";
 import remarkUnwrapImages from "remark-unwrap-images";
 
@@ -14,14 +14,14 @@ import { remarkReadingTime } from "./src/utils/remark-reading-time";
 
 // https://astro.build/config
 export default defineConfig({
-	output: "server",
-  	adapter: vercel({
+
+  adapter: vercel({
 		
 	  }),
 	image: {
 		domains: ["webmention.io"],
 	},
-	integrations: [
+  	integrations: [
 		expressiveCode(expressiveCodeOptions),
 		icon(),
 		tailwind({
@@ -47,10 +47,12 @@ export default defineConfig({
 			},
 		},
 	},
+	output: "server",
+
 	// https://docs.astro.build/en/guides/prefetch/
 	prefetch: true,
 	// ! Please remember to replace the following site property with your own domain
-	site: "https://blog.illsky.com/",
+	site: "https://blog.illsky.com",
 	vite: {
 		optimizeDeps: {
 			exclude: ["@resvg/resvg-js"],
