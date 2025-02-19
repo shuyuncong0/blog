@@ -61,6 +61,18 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <meta content={description} property="twitter:description" />
 <meta content={socialImageURL} property="twitter:image" />
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MJYKGPVKY1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag("js", new Date());
+
+	gtag("config", "G-MJYKGPVKY1");
+</script>
+
 {/* Sitemap */}
 <link href="/sitemap-index.xml" rel="sitemap" />
 

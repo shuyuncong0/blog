@@ -7,7 +7,7 @@ import ThemeProvider from "@/components/ThemeProvider.astro";
 import Footer from "@/components/layout/Footer.astro";
 import Header from "@/components/layout/Header.astro";
 import { siteConfig } from "@/site-config";
-import Analytics from '@vercel/analytics/astro'
+import Analytics from "@vercel/analytics/astro";
 interface Props {
 	meta: SiteMeta;
 }
@@ -20,7 +20,7 @@ const {
 <html lang={siteConfig.lang}>
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+		<link href="/sitemap-index.xml" rel="sitemap" />
 	</head>
 	<body>
 		<ThemeProvider />
@@ -30,6 +30,6 @@ const {
 			<slot />
 		</main>
 		<Footer />
-    <Analytics />
+		<Analytics />
 	</body>
 </html>
